@@ -5,6 +5,9 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+/* Controller */
+use App\Http\Controllers\InertiaTestController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +18,19 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/inertia-test', function() {
+    return Inertia::render('InertiaTest');
+});
+
+Route::get('/inertia/index', [InertiaTestController::class, 'index'])
+    ->name('inertia.index');
+
+// DBに保存する際はpost送信で受け付けること
+Route::post('/inertia/store', [InertiaTestController::class, 'store'])
+    ->name('inertia.store');
+
+Route::get('/inertia/show/{id}', [InertiaTestController::class, 'show'])
+    ->name('inertia.show');
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [

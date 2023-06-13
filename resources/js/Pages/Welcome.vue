@@ -1,7 +1,9 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
+// nodemodules/@inertiajs/inertia-vue3/src/link.jsの中を読み込んでいる
 
 defineProps({
+    // 型を指定している
     canLogin: Boolean,
     canRegister: Boolean,
     laravelVersion: String,
