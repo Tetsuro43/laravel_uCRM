@@ -25,8 +25,11 @@ Route::get('/inertia-test', function() {
 Route::get('/inertia/index', [InertiaTestController::class, 'index'])
     ->name('inertia.index');
 
+Route::get('/inertia/create', [InertiaTestController::class, 'create'])
+    ->name('inertia.create');
+
 // DBに保存する際はpost送信で受け付けること
-Route::post('/inertia/store', [InertiaTestController::class, 'store'])
+Route::post('/inertia', [InertiaTestController::class, 'store'])
     ->name('inertia.store');
 
 Route::get('/inertia/show/{id}', [InertiaTestController::class, 'show'])

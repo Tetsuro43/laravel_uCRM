@@ -1,10 +1,11 @@
 <script setup>
 // import { Link } from '@inertiajs/vue3'; // 正常に動作しない
 import { Link } from '@inertiajs/inertia-vue3';
-import { ref } from 'vue'
+// import { Link } from '@inertiajs/inertia';
+import { ref } from 'vue';
 
-const newTitle = ref('')
-const newContent = ref('')
+const newTitle = ref('');
+const newContent = ref('');
 </script>
 
 <template>
