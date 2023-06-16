@@ -1,5 +1,6 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
+// import { Head, Link } from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/inertia-vue3';
 // nodemodules/@inertiajs/inertia-vue3/src/link.jsの中を読み込んでいる
 
 defineProps({
