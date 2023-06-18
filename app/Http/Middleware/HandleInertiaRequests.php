@@ -41,7 +41,8 @@ class HandleInertiaRequests extends Middleware
             },
             'flash' => [
                 /* fn()は、部分リロードと呼ばれる。必要な時に呼び出せる */
-                'message' => fn() => $request->session()->get('message')
+                'message' => fn() => $request->session()->get('message'),
+                'status' => fn() => $request->session()->get('status')
             ],
         ]);
     }

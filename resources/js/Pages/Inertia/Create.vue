@@ -1,6 +1,7 @@
 <script setup>
 import { reactive } from 'vue';
 import { Inertia } from '@inertiajs/inertia'; // import元を間違えないように
+import ValidationErrors from '@/Components/ValidationErrors.vue';
 
 defineProps({
     errors: Object
@@ -23,6 +24,11 @@ const submitFunction = () => {
 </script>
 
 <template>
+    <!-- resources/js/Pages/Auth/Register.vueのerrors書き方参照
+        コンポーネントを作ってまとめて表示
+    -->
+    <ValidationErrors :errors="errors" />
+
     <form @submit.prevent="submitFunction">
         <input type="text" name="title" v-model="form.title">{{ form.title }}<br>
         <div v-if="errors.title">{{ errors.title }}</div><br>
