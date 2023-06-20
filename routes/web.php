@@ -7,9 +7,15 @@ use Inertia\Inertia;
 /* Controller */
 use App\Http\Controllers\InertiaTestController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\CustomerController;
 
+/* 商品関連 */
 Route::resource('/items', ItemController::class)->middleware(['auth', 'verified']);
 
+/* 顧客関連 */
+Route::resource('/customers', CustomerController::class)->middleware(['auth', 'verified']);
+
+/* トップページ関連 */
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
