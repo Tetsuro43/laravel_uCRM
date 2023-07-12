@@ -7,9 +7,9 @@ const props = defineProps({
     links: Array
 });
 
-onMounted(() => {
-    console.log(props.links);
-})
+// onMounted(() => {
+//     console.log(props.links);
+// })
 </script>
 
 <template>
